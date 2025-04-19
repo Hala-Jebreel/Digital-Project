@@ -1,0 +1,13 @@
+module sub_div_1210606(x,y,c,o);
+parameter n = 4;
+input [n-1:0]x,y;
+input [n-1:0]c;
+output signed [n:0]o;
+reg [n:0]o;
+always@(x or y or c) 
+  begin 
+  o = x ^ (!(y/2) + 1) ^ c; // conver the subtracter to adder by thake the complement for y/2 then add 1
+
+   end
+endmodule
+

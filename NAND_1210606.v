@@ -1,0 +1,11 @@
+module NAND_1210606(x,y,o);
+parameter n = 4;
+input [n-1:0]x,y;
+output signed  [n-1:0]o;
+reg [n-1:0]o;
+always@(x or y) 
+ begin 
+ o =!x||!y;//x nand y 
+ end
+ endmodule
+ 

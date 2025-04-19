@@ -1,0 +1,17 @@
+module ALu_1210606(x,y,c,o);
+parameter n = 4;
+input signed [n-1:0]x,y;
+input [2:0]c;
+output signed [n+1:0]o;
+wire w0,w1,w2,w3,v0,v1,v2,v3;
+add_div_1210606 Q1(x,y,u,w0);//called the 1 operation and save it result in w0
+add_multi_1210606 Q2(x,y,u,w1);//called the 2 operation and save it result in w1
+div_added_1210606 Q3(x,y,u,w2);//called the 3 operation and save it result in w2
+sub_div_1210606 Q4(x,y,u,w3);//called the 4 operation and save it result in w3
+NAND_1210606 A1(x,y,v0);//called the 5 operation and save it result in v0
+NOt_1210606 A2(x,v1);//called the 6 operation and save it result in v1
+NOr_1210606 A3(x,y,v2);//called the 7 operation and save it result in v2
+XOR_1210606 A4(x,y,v3);//called the 8 operation and save it result in v3
+mux8X1_1210606 m1(w0,w1,w2,w3,v0,v1,v2,v3,c[0],c[1],c[2],o);//called the mux 8 to 1 
+endmodule
+

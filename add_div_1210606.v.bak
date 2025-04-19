@@ -1,0 +1,17 @@
+module add_div_1210606(x,y,c,count,o);
+parameter n = 4;
+input [n-1:0]x,y;
+input [n-1:0]c;
+output signed [n:0]o;
+output count;
+reg [n:0]o;
+reg count;
+always@(x or y or c) 
+  begin 
+  o=(x ^ y ^ c)/2; 
+  count = x&y |(x^y)&c; 
+end
+endmodule
+
+
+
